@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Comision 34860</title>
+        <style>
+            picture {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                width: 100px;
+                margin-bottom: 10px;
+            }
+            img {
+                border-radius: 50%;
+                box-shadow: 0 0 15px #555;
+                margin-bottom: 10px;
+            }
+            .disabled {
+                opacity: 0.5;
+            }
+        </style>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <!-- <picture>
+            <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt='imagen'/>
+            Seba
+        </picture>
+        <picture>
+            <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt='imagen'/>
+            Julio
+        </picture> -->
+        <div id="root"></div>
+        <script type="text/babel">
+            // const root = document.getElementById('root')
+
+            // const Avatar = (params) => {
+            //     return `
+            //     <picture>
+            //         <img src="https://randomuser.me/api/portraits/lego/${params.id}.jpg" alt='imagen'/>
+            //         ${params.name}
+            //     </picture>
+            //     `
+            // }
+
+            // root.innerHTML = Avatar({ id: '1', name: 'Seba'})
+            // root.innerHTML += Avatar({ id: '2', name: 'Victor'})
+            // root.innerHTML += Avatar({ id: '3', name: 'Tomas'})
+
+            // root.querySelectorAll('img').forEach(img => {
+            //     img.addEventListener('click', () => {
+            //         img.classList.toggle('disabled')
+            //     })
+            // })
+                
+            const r = React.createElement
+
+            const Avatar = () => {
+                const src = 'https://randomuser.me/api/portraits/lego/1.jpg'
+
+                return r('picture', {}, [r('img', { src, alt: 'imagen' }), 'Seba'])
+            }
+
+            const AvatarJsx = () => {
+                const src = 'https://randomuser.me/api/portraits/lego/1.jpg'
+
+                return (
+                    <picture>
+                        <img src={src} alt='imagen'/>
+                        Seba
+                    </picture>
+                )
+            }
+
+            const domContainer = document.querySelector('#root');
+            const root = ReactDOM.createRoot(domContainer);
+            root.render(r(AvatarJsx));
+       </script>
+    </body>
+</html>
