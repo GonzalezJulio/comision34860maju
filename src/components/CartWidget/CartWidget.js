@@ -1,10 +1,13 @@
+import './CartWidget.css'
+import cart from './assets/cart.svg'
+
 const CartWidget = () => {
-    return (
-        <div style={{ backgroundColor: 'orange', color: 'black', padding: '10px', display: 'flex', justifyContent: 'space-around', width: '50px'}}>
-            <img src='./images/cart.svg' alt='cart-widget'/>
+    return(
+        <div className="CartWidget">
+            <img src={cart} alt='cart-widget' className='CartImg'/>
             0
         </div>
-    )
+    );
 }
 
 export default CartWidget

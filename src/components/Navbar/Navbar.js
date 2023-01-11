@@ -1,17 +1,24 @@
-import CartWidget from "../CartWidget/CartWidget"
+import { NavLink, Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
+import './Navbar.css'
 
-const Navbar = () => {
-    return (
-        <nav style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
-            <h1>Ecommerce</h1>
-            <div style={{ display: 'flex', justifyContent: 'space-around', width: '75%'}}>
-                <button>Ver todo</button>
-                <button>Celulares</button>
-                <button>Tablets</button>
-            </div>
-            <CartWidget />
-        </nav>
-    )
+import { useNavigate } from 'react-router-dom'
+
+const NavBar = () => {
+
+  const navigate = useNavigate()
+
+  return (
+    <nav className="NavBar" >
+          <h3 onClick={() => navigate('/')}>Ecommerce</h3>
+        <div className="Categories">
+          <NavLink to={`/category/celular`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Celulares</NavLink>
+          <NavLink to={`/category/tablet`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Tablets</NavLink>
+          <NavLink to={`/category/notebook`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Notebooks</NavLink>
+        </div>
+        <CartWidget />
+    </nav>
+  )
 }
 
-export default Navbar
+export default NavBar

@@ -1,13 +1,8 @@
-.Button {
-    /* color: #8C30F5; */
-    text-decoration: none;
-    border-radius: 25;
-    margin: 20px 50px;
-    /* TODO */
+.CartWidget {
     width: auto;
     padding: 12px;
-    font-size: 16px;
-    background: #0686c2;
+    font-size: 8px;
+    background: #d68fff;
     border-radius: 8px;
     flex: none;
     display: flex;
@@ -17,9 +12,13 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #FFFFFF;
     border: none;
     border-style: none;
     cursor: pointer;
     outline: inherit;
-  }
+    font-size: medium;
+}
+
+.CartImg {
+    margin-right: 10px;
+}

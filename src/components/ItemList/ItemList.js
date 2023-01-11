@@ -1,11 +1,11 @@
-const ItemList = ({ products }) => {
-    return (
-        <ul>
-            {products.map(prod => <li key={prod.id}>{prod.name}</li>)}
-            {/* {products.map(prod => <Item key={prod.id} {...prod}/>)} */}
+import './ItemList.css'
+import Item from '../Item/Item'
 
-            {/* { products.map(prod => React.createElement(Item, {...prod}))} */}
-        </ul> 
+const ItemList = ({products }) => {
+    return(
+        <div className='ListGroup'>
+            {products.map(prod => <Item key={prod.id} {...prod} />)}
+        </div>    
     )
 }
 
