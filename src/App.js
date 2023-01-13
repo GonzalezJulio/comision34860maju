@@ -4,20 +4,27 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Navbar from './components/Navbar/Navbar'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import EffectExample from './components/EffectExample';
+import { useState } from 'react';
+import Animation from './components/Animation';
 
 function App() {
+  const [show, setShow] = useState(true)
 
   return (
     <div className="App"> 
-        <BrowserRouter>
+      <Animation />
+        {/* <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer greeting='Todos nuestro products'/>}/>
             <Route path='/category/:categoryId' element={<ItemListContainer greeting='Productos filtrados'/>} />
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-          </Routes>
+          </Routes> */}
           {/* <Footer /> */}
-        </BrowserRouter>
+        {/* </BrowserRouter> */}
+        {/* <button onClick={() => {setShow(!show)}}>show/hide</button>
+          { show && <EffectExample /> } */}
     </div>
   );
 }

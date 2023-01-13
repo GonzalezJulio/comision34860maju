@@ -11,6 +11,9 @@ const ItemDetailContainer = () => {
 
     const { productId } = useParams()
 
+    useEffect(() => {
+        document.title = 'Detalle del producto'
+    }, [])
 
     useEffect(() => {
         getProductById(productId).then(response => {

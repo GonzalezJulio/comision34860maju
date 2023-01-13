@@ -12,6 +12,29 @@ const ItemListContainer = ({ greeting }) => {
     const { categoryId } = useParams()
 
     useEffect(() => {
+        const onResize = (event) => {
+            console.log(event)
+            console.log('cambie tamaño de pantalla')
+        }
+
+        const onResize2 = () => {
+            console.log('otra cosa')
+        }
+
+        window.addEventListener('resize', onResize)
+        window.addEventListener('resize', onResize2)
+
+        return () => {
+            window.removeEventListener('resize', onResize) 
+            window.removeEventListener('resize', onResize2)
+        }
+    }, [])
+
+    useEffect(() => {
+        document.title = 'Todos los productos'
+    }, [])
+
+    useEffect(() => {
         setLoading(true)
         
         const asyncFunction = categoryId ? getProductsByCategory : getProducts
@@ -31,7 +54,8 @@ const ItemListContainer = ({ greeting }) => {
     }
 
     return (
-        <div className='ItemListContainer'>
+        <div className='ItemListContainer' onClick={() => console.log('hice click en itemlistcontainer')}>
+            <button onClick={(event) => console.log(event)}>Ver evento sintetico</button>
             <h1>{greeting}</h1>
             <ItemList products={products} />
         </div>
